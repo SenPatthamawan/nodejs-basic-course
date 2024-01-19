@@ -1,19 +1,17 @@
-import fs from "fs";
-
-const filePath = "data.txt";
+import {write, read, clear} from "./utils.js"; //Best practice: use some function but same performance (a bit different)
+//Another solution
+// import utils from "./utils.js";
 
 const option = process.argv[2];
 const input = process.argv[3];
 
 if (option === "w") {
-  fs.appendFileSync(filePath, input + "\n");
-  console.log("appended:", input);
+// example: utils.write
+  write(input);
 } else if (option === "r") {
-  const content = fs.readFileSync(filePath, "utf-8");
-  console.log("file content:", content);
+  read();
 } else if (option === "c") {
-  fs.writeFileSync(filePath, "");
-  console.log("the file has been clear");
+  clear();
 } else {
   console.log("invalid option");
 }
