@@ -1,6 +1,6 @@
 import fs from "fs"
 
-const filePath = "sen.txt";
+const filePath = "data.txt";
 
 fs.writeFileSync(filePath, "Hello world\n");
 fs.appendFileSync(filePath, "Second line");
